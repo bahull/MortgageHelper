@@ -58,20 +58,59 @@
         <a href="#" class="font-medium hover:underline"> Resources </a>
       </header>
       <main class="w-full flex flex-col items-center p-6">
-        <section class="w-full max-w-md space-y-6">
+        <section class="w-full max-w-4xl space-y-6">
           <h2 class="text-2xl font-semibold text-center">
             Understanding Your Mortgage
           </h2>
-          <p class="text-gray-700 text-center">
+          <h4>
+            <b>1. Unlocking Financial Insights with Our Mortgage Calculator</b>
+          </h4>
+          <p class="text-center">
+            Embarking on the journey of homeownership or refinancing? Our
+            intuitive Mortgage Calculator is your go-to tool for demystifying
+            the numbers behind your mortgage. By inputting a few key details -
+            like the loan amount, interest rate, term, and down payment - you'll
+            see a detailed breakdown of your mortgage amortization. This isn't
+            just about crunching numbers; it's about giving you a clearer view
+            of how each payment chips away at your loan balance over time,
+            helping you see the light at the end of the tunnel.
+          </p>
+          <h4><b>2. Strategize Your Payments</b></h4>
+          <p class="text-center">
+            What's in it for you, you ask? Our calculator does more than just
+            spell out your monthly payment. It slices through the complexity of
+            interest and principal components, showing you exactly where your
+            hard-earned money goes each month and each year. Wondering how much
+            of your payment is knocking down the principal versus going towards
+            interest? We've got you covered. This insight is powerful - it can
+            help you strategize extra payments to reduce your interest burden
+            and shorten your loan term, ultimately saving you money and bringing
+            you closer to the day you own your home outright.
+          </p>
+          <h4><b>3. Plan with Precision</b></h4>
+          <p class="text-center">
+            The journey to financial freedom is all about planning, and our
+            calculator is like a compass guiding you through your mortgage
+            landscape. With our detailed annual summaries, you can spot trends,
+            understand how your equity builds over time, and make informed
+            decisions. Whether you're planning for home renovations, considering
+            refinancing options, or simply aiming for a debt-free life, our
+            calculator is an essential tool in your financial toolkit. Leverage
+            this information to align your mortgage with your long-term
+            financial goals, and watch as what once seemed like a daunting debt
+            becomes a well-managed part of your financial success story.
+          </p>
+
+          <!-- <p class="text-gray-700 text-center">
             Learn about mortgage amortization and how it can affect your
             financial planning. Use the calculator below to see an amortization
             schedule based on your mortgage details.
-          </p>
+          </p> -->
           <div
-            class="rounded-lg border text-card-foreground bg-white shadow-lg"
+            class="rounded-lg border text-card-foreground bg-white shadow-lg max-w-md mx-auto"
             data-v0-t="card"
           >
-            <div class="flex flex-col space-y-1.5 p-6">
+            <div class="flex flex-col space-y-1.5 p-6 text-center">
               <h3
                 class="text-2xl font-semibold leading-none tracking-tight text-blue-600"
               >
@@ -151,12 +190,18 @@
               id="amortizationTable"
               class="w-full text-sm text-left text-gray-500"
             >
-              <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-100">
                 <tr>
-                  <th scope="col" class="py-3 px-6">Year</th>
-                  <th scope="col" class="py-3 px-6">Interest</th>
-                  <th scope="col" class="py-3 px-6">Principal</th>
-                  <th scope="col" class="py-3 px-6">Remaining Balance</th>
+                  <th scope="col" class="py-3 px-6 border-b border-r">Year</th>
+                  <th scope="col" class="py-3 px-6 border-b border-r">
+                    Interest
+                  </th>
+                  <th scope="col" class="py-3 px-6 border-b border-r">
+                    Principal
+                  </th>
+                  <th scope="col" class="py-3 px-6 border-b border-r">
+                    Remaining Balance
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -343,25 +388,25 @@
           var cell4 = newRow.insertCell(3);
 
           cell1.textContent = year;
-          cell1.className = "text-center";
+          cell1.className = "text-center border-b border-r bg-gray-50";
           cell2.textContent = Number(annualInterest).toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
             minimumFractionDigits: 2,
           });
-          cell2.className = "text-center";
+          cell2.className = "text-center border-b border-r bg-gray-50";
           cell3.textContent = Number(annualPrincipal).toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
             minimumFractionDigits: 2,
           });
-          cell3.className = "text-center";
+          cell3.className = "text-center border-b border-r bg-gray-50";
           cell4.textContent = Number(remainingBalance).toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
             minimumFractionDigits: 2,
           });
-          cell4.className = "text-center";
+          cell4.className = "text-center border-b border-r bg-gray-50";
 
           // Reset annual accumulators
           annualInterest = 0;
