@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Amortization Calculator - Mortgage Helper</title>
+    <meta
+      name="description"
+      content="Use Mortgage Helper to easily calculate your mortgage amortization schedule. Understand your loan repayment with our detailed mortgage calculator."
+    />
+    <link rel="canonical" href="https://www.mortgagehelper.guide" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZPMN392SRL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-ZPMN392SRL");
+    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9671708414254230"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="bg-blue-50 text-gray-900 min-h-screen">
+      <header
+        class="p-6 flex items-center justify-between bg-blue-500 text-white"
+      >
+        <div class="flex items-center space-x-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-8 h-8"
+          >
+            <path
+              d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+            ></path>
+            <line x1="4" x2="4" y1="22" y2="15"></line>
+          </svg>
+          <h1 class="font-semibold text-xl">Mortgage Helper</h1>
+        </div>
+        <a href="#" class="font-medium hover:underline"> Resources </a>
+      </header>
+      <main class="w-full flex flex-col items-center p-6">
+        <section class="w-full max-w-md space-y-6">
+          <h2 class="text-2xl font-semibold text-center">
+            Understanding Your Mortgage
+          </h2>
+          <p class="text-gray-700 text-center">
+            Learn about mortgage amortization and how it can affect your
+            financial planning. Use the calculator below to see an amortization
+            schedule based on your mortgage details.
+          </p>
+          <div
+            class="rounded-lg border text-card-foreground bg-white shadow-lg"
+            data-v0-t="card"
+          >
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3
+                class="text-2xl font-semibold leading-none tracking-tight text-blue-600"
+              >
+                Mortgage Amortization Calculator
+              </h3>
+              <p class="text-sm text-muted-foreground">
+                Enter your mortgage details below to calculate your amortization
+                schedule.
+              </p>
+            </div>
+            <div class="p-6 space-y-2">
+              <div class="space-y-1">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-700"
+                  for="principal"
+                >
+                  Loan Amount
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-blue-200 focus:border-blue-500"
+                  id="principal"
+                  value="200000"
+                />
+              </div>
+              <div class="space-y-1">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-700"
+                  for="interest"
+                >
+                  Interest Rate
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-blue-200 focus:border-blue-500"
+                  id="interest"
+                  value="3.5"
+                />
+              </div>
+              <div class="space-y-1">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-700"
+                  for="term"
+                >
+                  Loan Term (years)
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-blue-200 focus:border-blue-500"
+                  id="term"
+                  value="30"
+                />
+              </div>
+              <div class="space-y-1">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-700"
+                  for="term"
+                >
+                  Down Payment
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-blue-200 focus:border-blue-500"
+                  id="downPayment"
+                  value="0"
+                  value="30"
+                />
+              </div>
+            </div>
+            <div class="flex items-center p-6">
+              <button
+                onclick="calculateAmortization()"
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 w-full bg-blue-500 text-white"
+              >
+                Calculate
+              </button>
+            </div>
+          </div>
+          <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+            <table
+              id="amortizationTable"
+              class="w-full text-sm text-left text-gray-500"
+            >
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                  <th scope="col" class="py-3 px-6">Year</th>
+                  <th scope="col" class="py-3 px-6">Interest</th>
+                  <th scope="col" class="py-3 px-6">Principal</th>
+                  <th scope="col" class="py-3 px-6">Remaining Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- JavaScript will populate rows here -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- <div
+            class="max-w-lg mx-auto my-10"
+            style="width: 100%; max-width: 1500px"
+          >
+            <div id="amortizationAccordion" class="space-y-2">
+              <!-- JavaScript will populate accordion items here -->
+          <!-- </div> -->
+
+          <!-- <canvas -->
+          <!-- id="amortizationChart" -->
+          <!-- style="width: 100%; height: 500px" -->
+          <!-- ></canvas> -->
+          <!-- </div> -->
+
+          <!-- <p class="text-gray-700 text-center">
+            The calculation results will help you understand how your mortgage
+            works and plan your finances effectively.
+          </p>
+          <div
+            class="rounded-lg border text-card-foreground bg-white shadow-lg mt-6"
+            data-v0-t="card"
+          >
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3
+                class="text-2xl font-semibold leading-none tracking-tight text-blue-600"
+              >
+                Amortization Schedule
+              </h3>
+              <p class="text-sm text-muted-foreground">
+                This chart represents your mortgage amortization schedule based
+                on the entered
+              </p>
+            </div>
+            <div class="p-4"></div> -->
+          <!-- </div> -->
+        </section>
+      </main>
+    </div>
+  </body>
+  <script>
+    function updateChart(labels, interestData, principalData, balanceData) {
+      var ctx = document.getElementById("amortizationChart").getContext("2d");
+
+      // Check if the chart instance exists and is a Chart instance
+      if (window.amortizationChart && window.amortizationChart.destroy) {
+        window.amortizationChart.destroy();
+      }
+      window.amortizationChart = new Chart(ctx, {
+        type: "line", // Can be 'bar', 'line', etc.
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Interest",
+              data: interestData,
+              borderColor: "rgb(255, 99, 132)",
+              backgroundColor: "rgba(255, 99, 132, 0.5)",
+            },
+            {
+              label: "Principal",
+              data: principalData,
+              borderColor: "rgb(54, 162, 235)",
+              backgroundColor: "rgba(54, 162, 235, 0.5)",
+            },
+            {
+              label: "Remaining Balance",
+              data: balanceData,
+              borderColor: "rgb(75, 192, 192)",
+              backgroundColor: "rgba(75, 192, 192, 0.5)",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+    function calculateAmortization() {
+      // Get input values
+      var principal = parseFloat(document.getElementById("principal").value);
+      var interestRate =
+        parseFloat(document.getElementById("interest").value) / 100 / 12;
+      var termYears = parseInt(document.getElementById("term").value);
+      var downPayment = parseFloat(
+        document.getElementById("downPayment").value
+      );
+
+      // Adjust principal based on down payment
+      principal -= downPayment;
+
+      // Calculate number of payments
+      var numPayments = termYears * 12;
+
+      // Calculate monthly payment
+      var monthlyPayment =
+        (principal * interestRate) /
+        (1 - Math.pow(1 + interestRate, -numPayments));
+
+      // Initialize remaining balance
+      var remainingBalance = principal;
+
+      var interestData = [];
+      var principalData = [];
+      var balanceData = [];
+      var labels = [];
+      // var accordionContainer = document.getElementById("amortizationAccordion");
+      // accordionContainer.innerHTML = ""; // Clear existing content
+
+      var tableBody = document
+        .getElementById("amortizationTable")
+        .getElementsByTagName("tbody")[0];
+      tableBody.innerHTML = "";
+
+      var annualInterest = 0;
+      var annualPrincipal = 0;
+
+      for (var i = 1; i <= numPayments; i++) {
+        // Calculate interest for the month
+        var interest = remainingBalance * interestRate;
+
+        // Calculate the amount to be applied to principal
+        var principalPayment = monthlyPayment - interest;
+
+        // Update the remaining balance
+        remainingBalance -= principalPayment;
+
+        // Accumulate annual values
+        annualInterest += interest;
+        annualPrincipal += principalPayment;
+
+        // Process data annually
+        if (i % 12 === 0 || i === numPayments) {
+          var year = i / 12;
+
+          labels.push("Year " + year);
+          interestData.push(annualInterest.toFixed(2));
+          principalData.push(annualPrincipal.toFixed(2));
+          balanceData.push(remainingBalance.toFixed(2));
+
+          // Add to accordion
+          // var accordionItem = document.createElement("div");
+          // accordionItem.className = "border p-4 bg-white";
+
+          // // Header (clickable)
+          // var header = document.createElement("div");
+          // header.className = "font-bold cursor-pointer";
+          // header.textContent = "Year " + year;
+          // header.onclick = function () {
+          //   this.nextElementSibling.classList.toggle("hidden");
+          // };
+
+          // Content (hidden by default)
+          // var content = document.createElement("div");
+          // content.className = "hidden mt-2";
+          // content.textContent =
+          //   "Interest: " +
+          //   annualInterest.toFixed(2) +
+          //   ", Principal: " +
+          //   annualPrincipal.toFixed(2) +
+          //   ", Remaining Balance: " +
+          //   remainingBalance.toFixed(2);
+
+          // accordionItem.appendChild(header);
+          // accordionItem.appendChild(content);
+          // accordionContainer.appendChild(accordionItem);
+
+          // Add to table
+          var newRow = tableBody.insertRow();
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+          var cell4 = newRow.insertCell(3);
+
+          cell1.textContent = year;
+          cell1.className = "text-center";
+          cell2.textContent = Number(annualInterest).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 2,
+          });
+          cell2.className = "text-center";
+          cell3.textContent = Number(annualPrincipal).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 2,
+          });
+          cell3.className = "text-center";
+          cell4.textContent = Number(remainingBalance).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 2,
+          });
+          cell4.className = "text-center";
+
+          // Reset annual accumulators
+          annualInterest = 0;
+          annualPrincipal = 0;
+        }
+      }
+      // updateChart(labels, interestData, principalData, balanceData);
+    }
+  </script>
+</html>
